@@ -21,7 +21,7 @@ data "aws_ami" "my_image" {
 
 resource "aws_key_pair" "fjorg1" {
   key_name   = "fjorg1"
-  public_key = "${file("~/.ssh/id_rsa.pub")}"
+  public_key = "${var.ssh_key_flama}"
 }
 
 resource "aws_instance" "bastion_host" {
